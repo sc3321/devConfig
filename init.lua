@@ -42,6 +42,10 @@ vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 vim.keymap.set("n", "<leader>q", "<cmd>bdelete<CR>", { desc = "Close buffer" })
 
+-- Splits: <leader>h horizontal, <leader>v vertical
+vim.keymap.set("n", "<leader>h", "<cmd>split<CR>", { desc = "Horizontal split" })
+vim.keymap.set("n", "<leader>v", "<cmd>vsplit<CR>", { desc = "Vertical split" })
+
 -- TRAINING BLOCK: arrows disabled in normal/visual mode.
 -- Delete this block after ~3 weeks, once jumping is automatic.
 for _, key in ipairs({ "<Up>", "<Down>", "<Left>", "<Right>" }) do
@@ -291,4 +295,4 @@ vim.api.nvim_create_autocmd("LspAttach", {
       map("<leader>lo", "<cmd>LspClangdSwitchSourceHeader<CR>", "Switch header/source")
     end
   end,
-
+})
